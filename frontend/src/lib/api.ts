@@ -1,15 +1,19 @@
 import { Product, ApiResponse } from './types';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
-if (!API_URL) {
-  throw new Error(
-    "NEXT_PUBLIC_API_URL is not set. Configure it in frontend/.env.local for development (e.g. http://localhost:4000) and in the Vercel project environment (e.g. https://YOUR-RENDER-BACKEND.onrender.com) for production."
-  );
+
+function resolveApiUrl(): string {
+  if (!API_URL) {
+    throw new Error(
+      "NEXT_PUBLIC_API_URL is not set. Configure it in frontend/.env.local for development (e.g. http://localhost:4000) and in the Vercel project environment (e.g. https://YOUR-RENDER-BACKEND.onrender.com) for production."
+    );
+  }
+  return API_URL;
 }
 
 async function fetchApi<T>(endpoint: string, options?: RequestInit): Promise<ApiResponse<T>> {
   try {
-    const res = await fetch(`${API_URL}${endpoint}`, {
+    const res = await fetch(`${resolveApiUrl()}${endpoint}`, {
       ...options,
       headers: {
         'Content-Type': 'application/json',
@@ -47,7 +51,7 @@ export async function adminLogin(
   email: string,
   password: string
 ): Promise<{ verificationToken?: string; error?: string }> {
-  const res = await fetch(`${API_URL}/api/admin/login`, {
+  const res = await fetch(`${resolveApiUrl()}/api/admin/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password }),
@@ -63,7 +67,7 @@ export async function verifyOwner(
   verificationToken: string,
   secret: string
 ): Promise<{ token?: string; error?: string }> {
-  const res = await fetch(`${API_URL}/api/admin/verify-owner`, {
+  const res = await fetch(`${resolveApiUrl()}/api/admin/verify-owner`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ verificationToken, secret }),
@@ -76,7 +80,7 @@ export async function verifyOwner(
 }
 
 export async function getAdminProducts(token: string): Promise<Product[]> {
-  const res = await fetch(`${API_URL}/api/admin/products`, {
+  const res = await fetch(`${resolveApiUrl()}/api/admin/products`, {
     headers: { Authorization: `Bearer ${token}` },
   });
   const data = await res.json();
@@ -84,7 +88,7 @@ export async function getAdminProducts(token: string): Promise<Product[]> {
 }
 
 export async function getAdminProduct(token: string, id: string): Promise<Product | null> {
-  const res = await fetch(`${API_URL}/api/admin/products/${id}`, {
+  const res = await fetch(`${resolveApiUrl()}/api/admin/products/${id}`, {
     headers: { Authorization: `Bearer ${token}` },
   });
   const data = await res.json();
@@ -95,7 +99,7 @@ export async function createProduct(
   token: string,
   data: Omit<Product, "id" | "createdAt" | "updatedAt">
 ): Promise<Product | null> {
-  const res = await fetch(`${API_URL}/api/admin/products`, {
+  const res = await fetch(`${resolveApiUrl()}/api/admin/products`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -108,7 +112,7 @@ export async function createProduct(
 }
 
 export async function updateProduct(token: string, id: string, updates: Partial<Product>): Promise<boolean> {
-  const res = await fetch(`${API_URL}/api/admin/products/${id}`, {
+  const res = await fetch(`${resolveApiUrl()}/api/admin/products/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -121,7 +125,7 @@ export async function updateProduct(token: string, id: string, updates: Partial<
 }
 
 export async function uploadThumbnail(token: string, slug: string, dataUrl: string): Promise<string | null> {
-  const res = await fetch(`${API_URL}/api/admin/upload-thumbnail`, {
+  const res = await fetch(`${resolveApiUrl()}/api/admin/upload-thumbnail`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -134,7 +138,7 @@ export async function uploadThumbnail(token: string, slug: string, dataUrl: stri
 }
 
 export async function updateProductStatus(token: string, id: string, status: string): Promise<boolean> {
-  const res = await fetch(`${API_URL}/api/admin/products/${id}/status`, {
+  const res = await fetch(`${resolveApiUrl()}/api/admin/products/${id}/status`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -147,7 +151,7 @@ export async function updateProductStatus(token: string, id: string, status: str
 }
 
 export async function deleteProduct(token: string, id: string): Promise<boolean> {
-  const res = await fetch(`${API_URL}/api/admin/products/${id}`, {
+  const res = await fetch(`${resolveApiUrl()}/api/admin/products/${id}`, {
     method: 'DELETE',
     headers: { Authorization: `Bearer ${token}` },
   });
