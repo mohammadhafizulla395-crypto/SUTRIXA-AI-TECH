@@ -23,25 +23,26 @@
   },
   {
     "id": "prod-002",
-    "title": "CreatorX",
-    "slug": "creatorx",
-    "description": "Bold portfolio template built for digital creators and influencers. Includes integrated social feeds, project showcases, and a dynamic hero section with parallax effects.",
+    "title": "Portfolio Website",
+    "slug": "Ek Prompt Se Banao Well-Structured Portfolio Website 🤯 | AI",
+    "description": "Want a professional salon website like this?\n\nThis is a complete Salon Website Source Code with sections for:\n\nHome\nAbout\nServices\nGallery\nProducts\nMenu\nTransformation\nReviews\nBooking\nContact\n\nYou can use the source code as a starting point for your own salon website and customize it as needed.\n\n💻 Complete Source Code:\nPurchase link is available in the description/pinned comment.\n\n📩 For details, check the link and contact us.\n\nSUTRIXA AI — Build With AI\n\n#SalonWebsite #WebsiteSourceCode #WebDevelopment #WebsiteDesign #SUTRIXAAI #SalonBusiness #WebDeveloper #Coding",
     "category": "Portfolio",
-    "price": 89,
-    "currency": "USD",
+    "price": 249,
+    "currency": "INR",
     "thumbnail": "/thumbnails/creatorx.png",
     "previewRoute": "/demo/creatorx",
     "technologies": [
       "Next.js",
-      "React",
+      "React.js",
       "TypeScript",
-      "Tailwind CSS"
+      "Tailwind CSS",
+      "Node.js"
     ],
-    "featured": false,
+    "featured": true,
     "status": "published",
-    "sortOrder": 2,
+    "sortOrder": 40,
     "createdAt": "2026-01-15T00:00:00Z",
-    "updatedAt": "2026-09-04T10:47:14.421Z"
+    "updatedAt": "2026-09-12T13:57:02.229Z"
   },
   {
     "id": "prod-003",
