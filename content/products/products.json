@@ -45,10 +45,10 @@
   },
   {
     "id": "prod-003",
-    "title": "Devfolio",
-    "slug": "devfolio",
-    "description": "Developer-focused portfolio with integrated GitHub activity, code snippet displays, and tech stack visualizations. Perfect for software engineers looking to showcase their projects.",
-    "category": "Creative",
+    "title": "Saloon Website",
+    "slug": "Professional Salon Website Project | Complete Source Code for Developers",
+    "description": "🚀 Professional Salon Website Project — Complete Source Code\n\nLooking for a professionally designed website project that you can customize, study, and use as a starting point for your own web development work?\n\nIn this video, I'm showcasing a complete Salon Website project designed with a modern, clean and professional interface.\n\nThe project includes important website sections such as:\n\n• Home\n• About\n• Services\n• Gallery\n• Products\n• Menu\n• Transformation\n• Reviews\n• Booking\n• Contact\n\n💻 WHAT YOU GET\n\nThe complete website source code is provided as a development project.\n\nYou can use it as a starting point for:\n\n• Client website projects\n• Salon and beauty business websites\n• Personal web development projects\n• Learning and studying website structure\n• UI customization\n• Further development and integration\n\nThe source code allows developers to understand the structure of a complete business website and customize the design and content according to their requirements.\n\n🎯 BUILT FOR DEVELOPERS\n\nIf you're a web developer, freelancer, student, or someone learning modern website development, this project can give you a solid starting point instead of building the entire website structure from scratch.\n\nYou can customize the sections, content, styling and functionality according to your project requirements.\n\n💻 GET THE COMPLETE SOURCE CODE\n\nThe complete source code is available through the purchase link.\n\nYou can also check the live website demo before purchasing.\n\nSUTRIXA AI\nBuild • Customize • Deploy",
+    "category": "Business",
     "price": 139,
     "currency": "INR",
     "thumbnail": "/thumbnails/devfolio.png",
@@ -57,13 +57,14 @@
       "Next.js",
       "TypeScript",
       "Tailwind CSS",
-      "Prism.js"
+      "Prism.js",
+      "Node.js"
     ],
     "featured": true,
     "status": "published",
-    "sortOrder": 3,
+    "sortOrder": 19,
     "createdAt": "2026-01-15T00:00:00Z",
-    "updatedAt": "2026-09-05T06:10:04.687Z"
+    "updatedAt": "2026-09-12T13:49:21.109Z"
   },
   {
     "id": "prod-004",
