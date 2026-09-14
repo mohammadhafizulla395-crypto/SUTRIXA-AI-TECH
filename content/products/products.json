@@ -7,7 +7,7 @@
     "category": "Fitness",
     "price": 179,
     "currency": "INR",
-    "thumbnail": "/thumbnails/IBuiltaPremiumGymWebsitewithAIReactWebsiteSourceCodeLiveDemo.png",
+    "thumbnail": "blob:https://chatgpt.com/51790d7c-0d48-4480-ba4b-9bf71c7398ca",
     "previewRoute": "https://gym-selling-smh-demo-website-sutrix.vercel.app",
     "technologies": [
       "Next.js",
@@ -19,7 +19,7 @@
     "status": "published",
     "sortOrder": 100,
     "createdAt": "2026-01-15T00:00:00Z",
-    "updatedAt": "2026-09-14T15:22:23.721Z"
+    "updatedAt": "2026-09-14T15:22:58.111Z"
   },
   {
     "id": "prod-002",
