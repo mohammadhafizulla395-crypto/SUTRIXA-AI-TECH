@@ -7,7 +7,7 @@
     "category": "Business",
     "price": 179,
     "currency": "INR",
-    "thumbnail": "/thumbnails/nexus-portfolio.svg",
+    "thumbnail": "/thumbnails/IBuiltaPremiumGymWebsitewithAIReactWebsiteSourceCodeLiveDemo.png",
     "previewRoute": "https://gym-selling-smh-demo-website-sutrix.vercel.app",
     "technologies": [
       "Next.js",
@@ -19,7 +19,7 @@
     "status": "published",
     "sortOrder": 100,
     "createdAt": "2026-01-15T00:00:00Z",
-    "updatedAt": "2026-09-14T13:42:21.170Z"
+    "updatedAt": "2026-09-14T14:22:48.416Z"
   },
   {
     "id": "prod-002",
