@@ -75,7 +75,7 @@
     "category": "Portfolio",
     "price": 59,
     "currency": "USD",
-    "thumbnail": "/thumbnails/minimalist-pro.svg",
+    "thumbnail": "/thumbnails/minimalist-pro.jpg",
     "previewRoute": "/demo/minimalist-pro",
     "technologies": [
       "Next.js",
@@ -87,7 +87,7 @@
     "status": "draft",
     "sortOrder": 4,
     "createdAt": "2026-01-15T00:00:00Z",
-    "updatedAt": "2026-01-15T00:00:00Z"
+    "updatedAt": "2026-09-14T15:29:44.790Z"
   },
   {
     "id": "prod-005",
