@@ -1,14 +1,14 @@
 [
   {
     "id": "prod-001",
-    "title": "Nexus Portfolio",
-    "slug": "nexus-portfolio",
-    "description": "Nexus Portfolio is a premium portfolio template for freelance designers and creative studios. It combines a bold dark aesthetic, smooth scroll animations, and drag-and-drop sections to showcase projects, client logos, and a contact form out of the box.",
-    "category": "Portfolio",
-    "price": 79,
-    "currency": "USD",
+    "title": "Gym Website",
+    "slug": "I Built a Premium Gym Website with AI 🤖 | React Website Source Code + Live Demo",
+    "description": "I built a premium gym website with AI-assisted development using a modern React frontend.\n\nThe complete IRONPEAK Fitness Studio website, including the design, responsive layout, animations, pages, and the full frontend source code.\n\n🔥 What you’ll see in this project:\n\nPremium gym website design\nReact frontend development\nFully responsive website\nModern UI and animations\nGym programs & membership pages\nTrainer section\nGallery and blog\nContact & enquiry section\nMobile-friendly navigation\nClean and customizable source code\nLive website demonstration\n\nThis project is created for web developers, frontend developers, AI-assisted developers, gym owners, fitness studios, and anyone looking for a modern gym website project.\n",
+    "category": "Business",
+    "price": 179,
+    "currency": "INR",
     "thumbnail": "/thumbnails/nexus-portfolio.svg",
-    "previewRoute": "/demo/nexus-portfolio",
+    "previewRoute": "https://gym-selling-smh-demo-website-sutrix.vercel.app",
     "technologies": [
       "Next.js",
       "React",
@@ -17,9 +17,9 @@
     ],
     "featured": true,
     "status": "published",
-    "sortOrder": 1,
+    "sortOrder": 100,
     "createdAt": "2026-01-15T00:00:00Z",
-    "updatedAt": "2026-09-14T13:41:18.747Z"
+    "updatedAt": "2026-09-14T13:42:21.170Z"
   },
   {
     "id": "prod-002",
