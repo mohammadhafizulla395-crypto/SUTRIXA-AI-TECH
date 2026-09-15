@@ -131,3 +131,35 @@ export async function deleteProduct(id: string): Promise<boolean> {
   await writeProducts(filtered);
   return true;
 }
+
+export async function githubWriteFile(repoPath: string, base64Content: string, commitMessage: string): Promise<boolean> {
+  if (!GITHUB_TOKEN || !GITHUB_OWNER || !GITHUB_REPO) return false;
+  try {
+    const existingUrl = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${repoPath}?ref=${GITHUB_BRANCH}`;
+    const existingRes = await fetch(existingUrl, {
+      headers: { Authorization: `token ${GITHUB_TOKEN}` },
+    });
+    let sha: string | undefined;
+    if (existingRes.ok) {
+      const existingData: any = await existingRes.json();
+      sha = existingData.sha;
+    }
+    const putUrl = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${repoPath}`;
+    const res = await fetch(putUrl, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `token ${GITHUB_TOKEN}`,
+      },
+      body: JSON.stringify({
+        message: commitMessage,
+        content: base64Content,
+        sha,
+        branch: GITHUB_BRANCH,
+      }),
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}

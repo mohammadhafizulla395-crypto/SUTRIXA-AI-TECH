@@ -10,6 +10,7 @@ import {
   deleteProduct,
   getProductById,
 } from '../lib/content';
+import { githubWriteFile } from '../lib/github';
 import { Product } from '../lib/types';
 
 const router = Router();
@@ -26,8 +27,22 @@ async function saveThumbnail(slug: string, dataUrl: string): Promise<string | nu
     'vnd.microsoft.icon': 'ico',
   };
   const ext = extMap[mime] || mime.replace('+xml', '').replace('x-', '');
-  const buffer = Buffer.from(match[3], 'base64');
+  const base64Data = match[3];
+  const buffer = Buffer.from(base64Data, 'base64');
   if (buffer.length === 0 || buffer.length > 50 * 1024 * 1024) return null;
+
+  const safeSlug = slug.replace(/[^a-z0-9-]/gi, '').slice(0, 80) || 'thumbnail';
+  const fileName = `${safeSlug}.${ext}`;
+  const repoPath = `frontend/public/thumbnails/${fileName}`;
+
+  const committed = await githubWriteFile(repoPath, base64Data, `Upload thumbnail: ${fileName}`);
+  if (committed) {
+    return `/thumbnails/${fileName}`;
+  }
+
+  if (process.env.GITHUB_TOKEN && process.env.GITHUB_OWNER && process.env.GITHUB_REPO) {
+    return null;
+  }
 
   const fs = await import('fs');
   const path = await import('path');
@@ -35,9 +50,6 @@ async function saveThumbnail(slug: string, dataUrl: string): Promise<string | nu
   if (!fs.existsSync(THUMB_DIR)) {
     fs.mkdirSync(THUMB_DIR, { recursive: true });
   }
-
-  const safeSlug = slug.replace(/[^a-z0-9-]/gi, '').slice(0, 80) || 'thumbnail';
-  const fileName = `${safeSlug}.${ext}`;
   fs.writeFileSync(path.join(THUMB_DIR, fileName), buffer);
   return `/thumbnails/${fileName}`;
 }
